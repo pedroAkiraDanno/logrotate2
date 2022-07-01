@@ -28,7 +28,7 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
 
 
 
-## STEPS by STEPS (completed)
+## STEPS by STEPS on Linux Environment (completed)
     sudo su - 
     apt-get install -y
     cd ~
@@ -40,7 +40,7 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
 
     gcc -Wall -O2 logrotate.c -o logrotate
 
-    ./test1 | ./logrotate file.log 100 10 0
+    ./test1 | ./logrotate file.log 100
 
 
 

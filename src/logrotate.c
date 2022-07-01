@@ -12,17 +12,21 @@
  * limitations under the License.
  *
  *
- * 2010.09.06, v1.0, Guillermo Grandes
+ * 01-07-2022, v1.0, Pedro Akira Danno Lima
  *
  * Compile: gcc -Wall -O2 logrotate.c -o logrotate
  */
 
- 
+
+
+
+//MACROS 
 #define _LARGEFILE_SOURCE
 #define _FILE_OFFSET_BITS 64
 #define _GNU_SOURCE
 #define _XOPEN_SOURCE 600
-//
+
+//header files 
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -32,13 +36,33 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>
-//
+
+//MACROS 
 #define BUF_SIZE_IN 2048
 #define BUF_SIZE_TS 64
 #define VERSION     "1.0"
-//
+
+/* Global Variables */
 static char *name = NULL;
 static unsigned long MAX_SIZE = 0;
+
+
+/*Function Prototypes */
+ int printLineTS(char *buf, int maxLen, char *extra); // ex: 2020-11-21 09:27:44 > extra   _BUF_SIZE_TS 64
+ int loadBuffer(void *buf, int pos, int size); //system call read 
+ unsigned long long getFileSize(int fd); // get the size file
+ int openOutput(void); //open a file, open a file mean create a pointer to file in memory to hard disk 
+ void rotateLog(int *fd); //if MAX_SIZE > file log switch to another file 
+ void process(void);
+
+
+
+
+
+
+
+
+
 //
 inline int
 printLineTS(char *buf, int maxLen, char *extra)
@@ -47,12 +71,21 @@ printLineTS(char *buf, int maxLen, char *extra)
        struct tm *p_tm = localtime(&t);
        return snprintf(buf, maxLen, "%04d-%02d-%02d %02d:%02d:%02d%s", p_tm->tm_year+1900, p_tm->tm_mon+1, p_tm->tm_mday, p_tm->tm_hour, p_tm->tm_min, p_tm->tm_sec, extra);
 }
+
+
+
+
+
 //
 inline int
 loadBuffer(void *buf, int pos, int size)
 {
     return read(0, buf + pos, size - pos);
 }
+
+
+
+
 //
 inline unsigned long long
 getFileSize(int fd)
@@ -65,6 +98,10 @@ getFileSize(int fd)
     }
     return sb.st_size;
 }
+
+
+
+
 //
 inline int
 openOutput(void)
@@ -78,6 +115,12 @@ openOutput(void)
     }
     return fd;
 }
+
+
+
+
+
+
 //
 inline void 
 rotateLog(int *fd)
@@ -96,6 +139,10 @@ rotateLog(int *fd)
         }
     }
 }
+
+
+
+
 //
 void
 process(void) 
@@ -140,7 +187,16 @@ process(void)
         write(fd, "\n", 1);
     }
 }
+
+
+
+
+
+
+
+
 //
+/*main*/
 int
 main(int argc, char *argv[])
 {
@@ -158,4 +214,15 @@ main(int argc, char *argv[])
     //
     exit(EXIT_SUCCESS);
 }
-//
+
+
+
+
+
+
+
+
+
+
+
+//END
