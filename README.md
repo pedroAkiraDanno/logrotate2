@@ -17,7 +17,7 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
     ./process-to-log | ./logrotate <pathname> <size-limit-bytes>
 
 
-## Running example
+## Running Example
 
     ./process-to-log | ./logrotate file.log 100    
 
@@ -26,5 +26,26 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
     2013-06-02 00:47:51 > Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     2013-06-02 00:47:51 > Pellentesque in mi ac tellus porttitor condimentum.
 
+
+
+## STEPS by STEPS (completed)
+    sudo su - 
+    apt-get install -y
+    cd ~
+
+    rm -fr logrotate/
+    git clone https://github.com/pedroAkiraDanno/logrotate.git
+    cd logrotate/src/
+    chmod +x process-to-log test1
+
+    gcc -Wall -O2 logrotate.c -o logrotate
+
+    ./test1 | ./logrotate file.log 100 10 0
+
+
+
+
+
+
 ---
-Inspired in [rotatelogs](http://httpd.apache.org/docs/2.2/programs/rotatelogs.html) and [cronolog](http://cronolog.org/), this is C-minimalistic version.
+Inspired in [rotatelogs](http://httpd.apache.org/docs/2.2/programs/rotatelogs.html) , [cronolog](http://cronolog.org/) and [logrotete](https://github.com/ggrandes/logrotate), this is C-minimalistic version.

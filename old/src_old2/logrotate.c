@@ -16,8 +16,6 @@
  *
  * Compile: gcc -Wall -O2 logrotate.c -o logrotate
  */
-
- 
 #define _LARGEFILE_SOURCE
 #define _FILE_OFFSET_BITS 64
 #define _GNU_SOURCE
