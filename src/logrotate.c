@@ -300,7 +300,7 @@ main(int argc, char *argv[])
     //
     // Check Params
     if (argc != 3) {
-        fprintf(stderr, "Usage: %s <pathname> <size-limit-bytes>\n", argv[0]);
+        fprintf(stderr, "Usage: %s <pathname> <size-limit-bytes>\n Try './logrotate --help' for more information. \n", argv[0]);
         exit(EXIT_FAILURE);
     }
     //

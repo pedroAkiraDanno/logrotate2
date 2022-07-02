@@ -31,7 +31,7 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
 ## Examples Running options:
     ./logrotate help     
     ./logrotate --help    
-    ./logrotate --help    
+    ./logrotate -h    
 
     ./logrotate version    
     ./logrotate --version    
