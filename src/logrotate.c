@@ -84,6 +84,7 @@ loadBuffer(void *buf, int pos, int size)
 
     if (r == -1) {
     // deal with failed read
+    return r
     }    
 }
 // https://stackoverflow.com/questions/9148134/declared-with-attribute-warn-unused-result-wunused-result
