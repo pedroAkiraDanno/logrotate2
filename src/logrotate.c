@@ -12,7 +12,7 @@
  * limitations under the License.
  *
  *
- * 01-07-2022, v1.0, Pedro Akira Danno Lima
+ * 01-07-2022, v2.0, Pedro Akira Danno Lima
  *
  * Compile: gcc -Wall -O2 logrotate.c -o logrotate
  */
@@ -56,7 +56,7 @@ static unsigned long MAX_SIZE = 0;
   void rotateLog(int *fd); //if MAX_SIZE > file log switch to another file 
   void process(void);
   void help();
-
+  void version();
 
 
 
@@ -198,26 +198,25 @@ process(void)
 
 
  void help(){
-
     //fprintf(output, "logrotate utility is designed to simplify the administration of log files.\n\n");
     printf("Logrotate utility is designed to simplify the administration of log files.\n\n");
 
     printf("Usage:\n");
-    printf("  logrotate [OPTIONS]... \n");
-    printf("  ./process-to-log | ./logrotate <pathname> <size-limit-bytes> \n\n\n");    
+    printf("  logrotate [OPTIONS]... \n\n\n");
+
     
-
-
     printf("Compile:\n");
     printf("  gcc -Wall -O2 logrotate.c -o logrotate\n\n\n");
 
+
+    printf("  Syntax to Running \n");    
+    printf("  ./process-to-log | ./logrotate <pathname> <size-limit-bytes> \n\n\n");    
 
 
     printf("Simple Example run:\n");
     printf("  ./test1 | ./logrotate file.log 1000\n"); 
     printf("  firt argv file.log file name\n");   
     printf("  second argv 1000 = bytes of size file file.log\n\n\n");    
-
 
 
     printf("Full Example run:\n");
@@ -235,10 +234,14 @@ process(void)
     printf("  ./test1 | ./logrotate file.log 1000\n\n\n");
 
 
-    printf("For more informations access doc in <https://github.com/pedroAkiraDanno/logrotate2> \n\n\n");
+    printf("For more informations access doc in <https://github.com/pedroAkiraDanno/logrotate2> \n\n\n");  
 
-    
+ }
 
+
+
+ void version(){
+    printf("Version: v2.0");    
  }
 
 
@@ -255,6 +258,15 @@ main(int argc, char *argv[])
         help();
         exit(EXIT_SUCCESS);                
     }
+
+    //to version(void)
+    if (strcmp(argv[1], "version" ) == 0 || strcmp(argv[1], "--version" ) == 0 || strcmp(argv[1], "-v" ) == 0 ){
+        version();
+        exit(EXIT_SUCCESS);                
+    }
+
+
+
 
 
     //
