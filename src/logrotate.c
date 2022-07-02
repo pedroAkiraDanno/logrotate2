@@ -240,9 +240,12 @@ process(void)
 
 
 
+
  void version(){
-    printf("Version: v2.0\n\n");    
+    printf("Logrotate - Version: v2.0\n\n");    
  }
+
+
 
 
 
@@ -261,7 +264,7 @@ process(void)
    "limitations under the License.\n\n\n"
  
  
-   "02-07-2022, v2.0, Written by Pedro Akira Danno Lima\n\n\n\n");
+   "02-07-2022, v2.0, Written by Pedro Akira Danno Lima \n\n\n");
   
  }
 
