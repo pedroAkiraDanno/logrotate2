@@ -213,7 +213,7 @@ process(void)
 
     printf("Simple Example run:\n");
     printf("  ./test1 | ./logrotate file.log 1000\n"); 
-    printf("  firt argv file.log file name\n");   
+    printf("  first argv file.log file name\n");   
     printf("  second argv 1000 = bytes of size file file.log\n\n\n");    
 
 
@@ -258,7 +258,7 @@ process(void)
    "limitations under the License.\n\n\n"
  
  
-   "02-07-2022, v2.0, Written by Pedro Akira Danno Lima \n\n\n");
+   "07-11-2020  02-07-2022, v2.0, Written by Pedro Akira Danno Lima \n\n\n");
   
  }
 
@@ -273,7 +273,6 @@ process(void)
 int
 main(int argc, char *argv[])
 {
-
 
     //to help(void)
     if (strcmp(argv[1], "help" ) == 0 || strcmp(argv[1], "--help" ) == 0 || strcmp(argv[1], "-h" ) == 0 ){
@@ -293,8 +292,6 @@ main(int argc, char *argv[])
         print_copyright();
         exit(EXIT_SUCCESS);                
     }
-
-
 
 
     //
@@ -324,20 +321,20 @@ main(int argc, char *argv[])
 STEPS by STEPS on Linux Environment (completed)
 
 
-    sudo su - 
-    sudo apt-get install gcc -y
+        sudo su - 
+        sudo apt-get install gcc -y
 
-    cd ~
-    rm -fr logrotate2/
-    git clone https://github.com/pedroAkiraDanno/logrotate2.git
-    cd logrotate2/src/
-    chmod +x process-to-log test1
+        cd ~
+        rm -fr logrotate2/
+        git clone https://github.com/pedroAkiraDanno/logrotate2.git
+        cd logrotate2/src/
+        chmod +x process-to-log test1
 
-    gcc -Wall -O2 logrotate.c -o logrotate
-    #OR
-    gcc logrotate.c  -o logrotate    
+        gcc -Wall -O2 logrotate.c -o logrotate
+        #OR
+        gcc logrotate.c  -o logrotate    
 
-    ./test1 | ./logrotate file.log 100
+        ./test1 | ./logrotate file.log 100
 
 */
 
