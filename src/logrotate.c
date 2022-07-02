@@ -151,6 +151,7 @@ void
 process(void) 
 {
     ssize_t readed = 0;
+    ssize_t r = 0;    
     int fd = -1;
     int i;
     int head = 0;
@@ -165,9 +166,9 @@ process(void)
         for (i = 0; i < readed; i++) {
             if (bufin[i] == 10 || bufin[i] == 13 || bufin[i] == 0) { // EOL
                 bufin[i] = 0; // EOB
-                write(fd, bufin + head, i - head);
+                r = write(fd, bufin + head, i - head);
                 if (eol == 0) {
-                    write(fd, "\n", 1);
+                    r = write(fd, "\n", 1);
                 }
                 head = i+1;
                 eol++; newlined=0;
@@ -175,19 +176,19 @@ process(void)
                 if (!newlined) {
                     int len = printLineTS(bufts, sizeof(bufts), " > ");
                     rotateLog(&fd);
-                    write(fd, bufts, len);
+                    r = write(fd, bufts, len);
                     newlined++;
                 }
                 eol = 0;
             }
         }
         if (!eol) {
-            write(fd, bufin + head, readed - head);
+            r = write(fd, bufin + head, readed - head);
         }
         head = 0;
     }
     if (newlined) {
-        write(fd, "\n", 1);
+        r = write(fd, "\n", 1);
     }
 }
 
