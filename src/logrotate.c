@@ -80,7 +80,7 @@ printLineTS(char *buf, int maxLen, char *extra)
  int
 loadBuffer(void *buf, int pos, int size)
 {
-    return = read(0, buf + pos, size - pos);
+    return read(0, buf + pos, size - pos);
 
 }
 // warning then compile gcc https://stackoverflow.com/questions/9148134/declared-with-attribute-warn-unused-result-wunused-result
