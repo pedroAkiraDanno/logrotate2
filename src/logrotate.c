@@ -151,8 +151,7 @@ void
 process(void) 
 {
     ssize_t readed = 0;
-    ssize_t r2;
-    r2 = 0;    
+    ssize_t r2 = -1;
     int fd = -1;
     int i;
     int head = 0;
