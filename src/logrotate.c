@@ -55,7 +55,7 @@ static unsigned long MAX_SIZE = 0;
   int openOutput(void); //open a file, open a file mean create a pointer to file in memory to hard disk 
   void rotateLog(int *fd); //if MAX_SIZE > file log switch to another file 
   void process(void);
-
+  void help();
 
 
 
@@ -197,6 +197,49 @@ process(void)
 
 
 
+ void help(){
+
+    //fprintf(output, "logrotate utility is designed to simplify the administration of log files.\n\n");
+    printf("logrotate utility is designed to simplify the administration of log files.\n\n");
+
+    printf("Usage:\n");
+    printf("  logrotate [OPTIONS]... \n");
+    printf("  ./process-to-log | ./logrotate <pathname> <size-limit-bytes> \n\n\n");    
+    
+
+
+    printf("Compile:\n");
+    printf("  gcc -Wall -O2 logrotate.c -o logrotate\n\n\n");
+
+
+
+    printf("Simple Example run:\n");
+    printf("  ./test1 | ./logrotate file.log 1000\n"); 
+    printf("  firt argv file.log file name\n");   
+    printf("  second argv 1000 = bytes of size file file.log\n");    
+
+
+
+    printf("Full Example run:\n");
+    printf("  step 1 create test1.sh:\n");
+    printf("  touch test1\n");     
+    printf("  #!/bin/bash\n  for (( ; ; ))  \n  do  \n  echo \"test\"  \n  sleep 10  \n  done  \n\n");
+
+    printf("  step 2 give permision to file test1.sh:\n");    
+    printf("  chmod +x test1\n\n");
+
+    printf("  step 3 compile logrotate:\n");    
+    printf("  gcc -Wall -O2 logrotate.c -o logrotate\n\n");
+
+    printf("  step 4 exec with argvs logrotate:\n");    
+    printf("  ./test1 | ./logrotate file.log 1000\n\n\n");
+
+
+    printf("For more informations access doc in <https://github.com/pedroAkiraDanno> \n\n\n");
+
+    
+
+ }
 
 
 
@@ -205,6 +248,15 @@ process(void)
 int
 main(int argc, char *argv[])
 {
+
+
+    //to help(void)
+    if (strcmp(argv[1], "help") == 0){
+        help();
+        exit(EXIT_SUCCESS);                
+    }
+
+
     //
     // Check Params
     if (argc != 3) {
