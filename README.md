@@ -28,6 +28,22 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
 
 
 
+## Examples Running options:
+    ./logrotate help     
+    ./logrotate --help    
+    ./logrotate --help    
+
+    ./logrotate version    
+    ./logrotate --version    
+    ./logrotate --v    
+
+    ./logrotate copyright    
+    ./logrotate --copyright                        
+
+
+
+
+
 ## STEPS by STEPS on Linux Environment (completed)
     sudo su - 
     sudo apt-get install gcc -y
