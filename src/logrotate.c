@@ -48,11 +48,11 @@ static unsigned long MAX_SIZE = 0;
 
 
 /*Function Prototypes */
- int printLineTS(char *buf, int maxLen, char *extra); // ex: 2020-11-21 09:27:44 > extra   _BUF_SIZE_TS 64
- int loadBuffer(void *buf, int pos, int size); //system call read 
- unsigned long long getFileSize(int fd); // get the size file
- int openOutput(void); //open a file, open a file mean create a pointer to file in memory to hard disk 
- void rotateLog(int *fd); //if MAX_SIZE > file log switch to another file 
+ inline int printLineTS(char *buf, int maxLen, char *extra); // ex: 2020-11-21 09:27:44 > extra   _BUF_SIZE_TS 64
+ inline int loadBuffer(void *buf, int pos, int size); //system call read 
+ inline unsigned long long getFileSize(int fd); // get the size file
+ inline int openOutput(void); //open a file, open a file mean create a pointer to file in memory to hard disk 
+ inline void rotateLog(int *fd); //if MAX_SIZE > file log switch to another file 
  void process(void);
 
 
