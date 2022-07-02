@@ -80,7 +80,9 @@ printLineTS(char *buf, int maxLen, char *extra)
  int
 loadBuffer(void *buf, int pos, int size)
 {
-    return read(0, buf + pos, size - pos);
+    ssize_t r = 0;
+    r =  read(0, buf + pos, size - pos);
+    return r;
 
 }
 // warning then compile gcc https://stackoverflow.com/questions/9148134/declared-with-attribute-warn-unused-result-wunused-result
@@ -222,6 +224,26 @@ main(int argc, char *argv[])
 
 
 
+
+
+/*
+STEPS by STEPS on Linux Environment (completed)
+
+
+    sudo su - 
+    sudo apt-get install gcc -y
+
+    cd ~
+    rm -fr logrotate2/
+    git clone https://github.com/pedroAkiraDanno/logrotate2.git
+    cd logrotate2/src/
+    chmod +x process-to-log test1
+
+    gcc -Wall -O2 logrotate.c -o logrotate
+
+    ./test1 | ./logrotate file.log 100
+
+*/
 
 
 
