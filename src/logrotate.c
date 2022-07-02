@@ -204,14 +204,12 @@ process(void)
     printf("Usage:\n");
     printf("  logrotate [OPTIONS]... \n\n\n");
 
-    
-    printf("Compile:\n");
-    printf("  gcc -Wall -O2 logrotate.c -o logrotate\n\n\n");
-
-
-    printf("  Syntax to Running \n");    
+    printf("Syntax to Running \n");    
     printf("  ./process-to-log | ./logrotate <pathname> <size-limit-bytes> \n\n\n");    
 
+
+    printf("Compile:\n");
+    printf("  gcc -Wall -O2 logrotate.c -o logrotate\n\n\n");
 
     printf("Simple Example run:\n");
     printf("  ./test1 | ./logrotate file.log 1000\n"); 
@@ -221,17 +219,17 @@ process(void)
 
     printf("Full Example run:\n");
     printf("  step 1 create test1.sh:\n");
-    printf("  touch test1\n");     
-    printf("  #!/bin/bash\n  for (( ; ; ))  \n  do  \n  echo \"test\"  \n  sleep 10  \n  done  \n\n");
+    printf("    touch test1\n");     
+    printf("    #!/bin/bash\n  for (( ; ; ))  \n  do  \n  echo \"test\"  \n  sleep 10  \n  done  \n\n");
 
     printf("  step 2 give permision to file test1.sh:\n");    
-    printf("  chmod +x test1\n\n");
+    printf("    chmod +x test1\n\n");
 
     printf("  step 3 compile logrotate:\n");    
-    printf("  gcc -Wall -O2 logrotate.c -o logrotate\n\n");
+    printf("    gcc -Wall -O2 logrotate.c -o logrotate\n\n");
 
     printf("  step 4 exec with argvs logrotate:\n");    
-    printf("  ./test1 | ./logrotate file.log 1000\n\n\n");
+    printf("    ./test1 | ./logrotate file.log 1000\n\n\n");
 
 
     printf("For more informations access doc in <https://github.com/pedroAkiraDanno/logrotate2> \n\n\n");  
