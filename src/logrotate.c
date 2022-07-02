@@ -200,7 +200,7 @@ process(void)
  void help(){
 
     //fprintf(output, "logrotate utility is designed to simplify the administration of log files.\n\n");
-    printf("logrotate utility is designed to simplify the administration of log files.\n\n");
+    printf("Logrotate utility is designed to simplify the administration of log files.\n\n");
 
     printf("Usage:\n");
     printf("  logrotate [OPTIONS]... \n");
@@ -216,7 +216,7 @@ process(void)
     printf("Simple Example run:\n");
     printf("  ./test1 | ./logrotate file.log 1000\n"); 
     printf("  firt argv file.log file name\n");   
-    printf("  second argv 1000 = bytes of size file file.log\n");    
+    printf("  second argv 1000 = bytes of size file file.log\n\n\n");    
 
 
 
@@ -235,7 +235,7 @@ process(void)
     printf("  ./test1 | ./logrotate file.log 1000\n\n\n");
 
 
-    printf("For more informations access doc in <https://github.com/pedroAkiraDanno> \n\n\n");
+    printf("For more informations access doc in <https://github.com/pedroAkiraDanno/logrotate2> \n\n\n");
 
     
 
@@ -251,7 +251,7 @@ main(int argc, char *argv[])
 
 
     //to help(void)
-    if (strcmp(argv[1], "help") == 0){
+    if (strcmp(argv[1], "help" || strcmp(argv[1], "--help" || strcmp(argv[1], "-h") == 0){
         help();
         exit(EXIT_SUCCESS);                
     }
