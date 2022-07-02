@@ -33,9 +33,9 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
     sudo apt-get install gcc -y
 
     cd ~
-    rm -fr logrotate/
-    git clone https://github.com/pedroAkiraDanno/logrotate.git
-    cd logrotate/src/
+    rm -fr logrotate2/
+    git clone https://github.com/pedroAkiraDanno/logrotate2.git
+    cd logrotate2/src/
     chmod +x process-to-log test1
 
     gcc -Wall -O2 logrotate.c -o logrotate
