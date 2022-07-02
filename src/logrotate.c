@@ -48,12 +48,12 @@ static unsigned long MAX_SIZE = 0;
 
 
 /*Function Prototypes */
- inline int printLineTS(char *buf, int maxLen, char *extra); // ex: 2020-11-21 09:27:44 > extra   _BUF_SIZE_TS 64
- inline int loadBuffer(void *buf, int pos, int size); //system call read 
- inline unsigned long long getFileSize(int fd); // get the size file
- inline int openOutput(void); //open a file, open a file mean create a pointer to file in memory to hard disk 
- inline void rotateLog(int *fd); //if MAX_SIZE > file log switch to another file 
- void process(void);
+  int printLineTS(char *buf, int maxLen, char *extra); // ex: 2020-11-21 09:27:44 > extra   _BUF_SIZE_TS 64
+  int loadBuffer(void *buf, int pos, int size); //system call read 
+  unsigned long long getFileSize(int fd); // get the size file
+  int openOutput(void); //open a file, open a file mean create a pointer to file in memory to hard disk 
+  void rotateLog(int *fd); //if MAX_SIZE > file log switch to another file 
+  void process(void);
 
 
 
@@ -64,7 +64,7 @@ static unsigned long MAX_SIZE = 0;
 
 
 //
-inline int
+ int
 printLineTS(char *buf, int maxLen, char *extra)
 {
        time_t t = time(NULL);
@@ -77,7 +77,7 @@ printLineTS(char *buf, int maxLen, char *extra)
 
 
 //
-inline int
+ int
 loadBuffer(void *buf, int pos, int size)
 {
     return read(0, buf + pos, size - pos);
@@ -87,7 +87,7 @@ loadBuffer(void *buf, int pos, int size)
 
 
 //
-inline unsigned long long
+ unsigned long long
 getFileSize(int fd)
 {
     struct stat sb;
@@ -103,7 +103,7 @@ getFileSize(int fd)
 
 
 //
-inline int
+ int
 openOutput(void)
 {
     int fd = -1;
@@ -122,7 +122,7 @@ openOutput(void)
 
 
 //
-inline void 
+ void 
 rotateLog(int *fd)
 {
     if (*fd == -1) {
