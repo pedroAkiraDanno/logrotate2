@@ -11,7 +11,7 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
 
 ## About versions
     v0.1.0 - dont recomend to use, is forks about olg project - have a lot problemas and bugs to fix 
-    v0.2.0 - first version that can use - like a fork in project ggrandes/logrotate -every thing is OK use use
+    v0.2.0 - first version that can use - like a fork in project ggrandes/logrotate -every thing is OK to  use - will create just 2 files ex: file.log when full create file.log.old and when full switch to the first file again file.log
 
 
 ## Compile (handmade)
