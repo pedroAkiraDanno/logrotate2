@@ -39,6 +39,8 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
     chmod +x process-to-log test1
 
     gcc -Wall -O2 logrotate.c -o logrotate
+    #OR
+    gcc logrotate.c  -o logrotate    
 
     ./test1 | ./logrotate file.log 100
 

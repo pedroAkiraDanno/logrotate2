@@ -36,6 +36,7 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>
+#include <stddef.h>
 
 //MACROS 
 #define BUF_SIZE_IN 2048
@@ -151,7 +152,7 @@ void
 process(void) 
 {
     ssize_t readed = 0;
-    ssize_t r2 = -1;
+    ssize_t  r2;
     int fd = -1;
     int i;
     int head = 0;
@@ -241,6 +242,8 @@ STEPS by STEPS on Linux Environment (completed)
     chmod +x process-to-log test1
 
     gcc -Wall -O2 logrotate.c -o logrotate
+    #OR
+    gcc logrotate.c  -o logrotate    
 
     ./test1 | ./logrotate file.log 100
 
