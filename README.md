@@ -8,6 +8,12 @@ Log Rotate based on filesize with Timestamp of lines, open source C code (Apache
 
 Read from stdin and output lines with timestamp in an output file (pathname), rotating them when file size exceeds specified size in bytes.
 
+
+## About versions
+    v0.1.0 - dont recomend to use, is forks about olg project - have a lot problemas and bugs to fix 
+    v0.2.0 - first version that can use - like a fork in project ggrandes/logrotate -every thing is OK use use
+
+
 ## Compile (handmade)
 
     gcc -Wall -O2 logrotate.c -o logrotate
