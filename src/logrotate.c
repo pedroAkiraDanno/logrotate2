@@ -80,14 +80,10 @@ printLineTS(char *buf, int maxLen, char *extra)
  int
 loadBuffer(void *buf, int pos, int size)
 {
-    ssize_t r = read(0, buf + pos, size - pos);
+    return = read(0, buf + pos, size - pos);
 
-    if (r == -1) {
-    // deal with failed read
-    return r
-    }    
 }
-// https://stackoverflow.com/questions/9148134/declared-with-attribute-warn-unused-result-wunused-result
+// warning then compile gcc https://stackoverflow.com/questions/9148134/declared-with-attribute-warn-unused-result-wunused-result
 
 
 
