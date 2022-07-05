@@ -2,6 +2,9 @@
 
 Log Rotate based on filesize with Timestamp of lines, open source C code (Apache License, Version 2.0). Do not require any external code/lib.
 
+For more information look at our
+docs located at [doc](https://github.com/pedroAkiraDanno/logrotate2/tree/main/doc/main) and [wiki]() .
+
 ---
 
 ## How works:
