@@ -76,4 +76,6 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
 
 
 ---
-Inspired in [rotatelogs](http://httpd.apache.org/docs/2.2/programs/rotatelogs.html) , [cronolog](http://cronolog.org/) , [logrotete](https://github.com/ggrandes/logrotate) and [rsyslog](https://www.rsyslog.com/), this is C-minimalistic version.
+Inspired in [rotatelogs](http://httpd.apache.org/docs/2.2/programs/rotatelogs.html) , [cronolog](http://cronolog.org/) , [logrotete](https://github.com/ggrandes/logrotate) and [rsyslog](https://www.rsyslog.com/), this is C-minimalistic version. 
+
+© [Pedro Akira](https://www.instagram.com/pedro.akira.3/)
