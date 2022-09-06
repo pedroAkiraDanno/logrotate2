@@ -2,6 +2,6 @@
   for (( ; ; ))  
   do  
   echo "test logrotate"  
-  sleep 4  
+  sleep 2  
   done  
 
