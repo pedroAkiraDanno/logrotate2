@@ -1,0 +1,7 @@
+#!/bin/bash
+  for (( ; ; ))  
+  do  
+  echo "test logrotate"  
+  sleep 4  
+  done  
+
