@@ -11,12 +11,10 @@ docs located at [doc](https://github.com/pedroAkiraDanno/logrotate2/blob/main/do
 
 Read from stdin and output lines with timestamp in an output file (pathname), rotating them when file size exceeds specified size in bytes.
 
-
 ## About versions (for more infos check [CHANGELOG.md](https://github.com/pedroAkiraDanno/logrotate2/blob/main/CHANGELOG.md))
+
     v0.2.0 - first version that can use - like a fork in project ggrandes/logrotate -every thing is OK to use     **explain- will create just 2 files. ex: file.log when full create file.log.old and when full switch to the first file again file.log
-    v0.1.0 - dont recomend to use, is forks about old project - have a lot problemas and bugs to fix 
-
-
+    v0.1.0 - dont recomend to use, is forks about old project - have a lot problemas and bugs to fix
 
 ## Compile (handmade)
 
@@ -26,36 +24,31 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
 
     ./process-to-log | ./logrotate <pathname> <size-limit-bytes>
 
-
 ## Running Example
 
-    ./process-to-log | ./logrotate file.log 100    
+    ./process-to-log | ./logrotate file.log 100
 
 ## Example output file:
 
     2013-06-02 00:47:51 > Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     2013-06-02 00:47:51 > Pellentesque in mi ac tellus porttitor condimentum.
 
-
-
 ## Examples Running options:
-    ./logrotate help     
-    ./logrotate --help    
-    ./logrotate -h    
 
-    ./logrotate version    
-    ./logrotate --version    
-    ./logrotate --v    
+    ./logrotate help
+    ./logrotate --help
+    ./logrotate -h
 
-    ./logrotate copyright    
-    ./logrotate --copyright                        
+    ./logrotate version
+    ./logrotate --version
+    ./logrotate --v
 
-
-
-
+    ./logrotate copyright
+    ./logrotate --copyright
 
 ## STEPS by STEPS on Linux Environment (completed)
-    sudo su - 
+
+    sudo su -
     sudo apt-get install gcc -y
 
     cd ~
@@ -66,14 +59,12 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
 
     gcc -Wall -O2 logrotate.c -o logrotate
     #OR
-    gcc logrotate.c  -o logrotate    
+    gcc logrotate.c  -o logrotate
 
     ./test1 | ./logrotate file.log 100
 
-
-
-
-
+## Copyright 24/09/2020 - 2022
 
 ---
+
 Inspired in [rotatelogs](http://httpd.apache.org/docs/2.2/programs/rotatelogs.html) , [cronolog](http://cronolog.org/) , [logrotete](https://github.com/ggrandes/logrotate) and [rsyslog](https://www.rsyslog.com/), this is C-minimalistic version. © [Pedro Akira](https://www.instagram.com/pedro.akira.3/)
