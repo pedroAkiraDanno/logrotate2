@@ -63,7 +63,7 @@ Read from stdin and output lines with timestamp in an output file (pathname), ro
 
     ./test1 | ./logrotate file.log 100
 
-## Copyright 24/09/2020 - 2022
+> Copyright 24/09/2020 - 2022
 
 ---
 
