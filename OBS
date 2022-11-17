@@ -1,6 +1,6 @@
+I use logrotate-master.zip like fork
 
+location: logrotate2/logrotate-master.zip
 
-I use logrotate-master.zip like fork 
-
-refe: 
+refe:
 https://github.com/ggrandes/logrotate
